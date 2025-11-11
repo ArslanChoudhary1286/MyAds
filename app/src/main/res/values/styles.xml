@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="Ad_Dialog" parent="ThemeOverlay.Material3.Dialog">
+        <!--        <item name="android:windowMinWidthMajor">90%</item>-->
+        <!--        <item name="android:windowMinWidthMinor">90%</item>-->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+</resources>

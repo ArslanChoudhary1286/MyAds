@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "700048143246",
+    "project_id": "noumanforimage",
+    "storage_bucket": "noumanforimage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700048143246:android:930318c81d587508d0aadf",
+        "android_client_info": {
+          "package_name": "com.appgemz.myads"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfvZLpmx5CpephLA7EsV2eEPezgTGBFSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

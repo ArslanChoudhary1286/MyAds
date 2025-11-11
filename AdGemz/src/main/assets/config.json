@@ -1,0 +1,96 @@
+{
+  "global_settings": {
+    "ads_enabled": true,
+    "mediation_enabled": true,
+    "test_mode": false,
+    "capping_ms": 5000,
+    "fail_capping_ms": 10000,
+    "ads_batch_ms": 3600000,
+    "ads_batch_size": 3,
+    "failed_attempt": 2,
+    "click_interval_ms": 3600000,
+    "clicks_in_interval": 3,
+    "runtime_ad_load_ms": 10000
+  },
+  "ad_placements": {
+    "app_open": {
+      "enabled": true,
+      "ad_unit_id": "ca-app-pub-3940256099942544/3419835294",
+      "preload": true,
+      "reload_on_dismiss": true,
+      "reload_on_failed": true
+    },
+    "interstitial": [
+      {
+        "placement_name": "splash",
+        "enabled": true,
+        "ad_unit_id": "ca-app-pub-3940256099942544/1033173712",
+        "preload": true,
+        "show_loading": true,
+        "reload_on_dismiss": true,
+        "reload_on_failed": true
+      },
+      {
+        "placement_name": "home",
+        "enabled": true,
+        "ad_unit_id": "ca-app-pub-3940256099942544/1033173712",
+        "preload": true,
+        "show_loading": true,
+        "reload_on_dismiss": true,
+        "reload_on_failed": true
+      }
+    ],
+    "banners": [
+      {
+        "placement_name": "splash",
+        "enabled": true,
+        "ad_unit_id": "ca-app-pub-3940256099942544/6300978111",
+        "auto_refresh_ms": 30000,
+        "preload": true,
+        "show_loading": true,
+        "reload_on_failed": true
+      },
+      {
+        "placement_name": "home",
+        "enabled": true,
+        "ad_unit_id": "ca-app-pub-3940256099942544/6300978111",
+        "auto_refresh_ms": 30000,
+        "preload": true,
+        "show_loading": true,
+        "reload_on_failed": true
+      }
+    ],
+    "native_ads": [
+      {
+        "placement_name": "language",
+        "enabled": true,
+        "ad_unit_id": "ca-app-pub-3940256099942544/2247696110",
+        "reload_on_failed": true,
+        "templateNo": 2,
+        "preload": true,
+        "show_loading": true,
+        "style": {
+          "headlineColor": "#000000",
+          "bodyColor": "#333333",
+          "ctaColor": "#0A51F9",
+          "backgroundColor": "#FFFFFF"
+        }
+      },
+      {
+        "placement_name": "boarding",
+        "enabled": true,
+        "ad_unit_id": "ca-app-pub-3940256099942544/2247696110",
+        "reload_on_failed": true,
+        "templateNo": 2,
+        "preload": true,
+        "show_loading": true,
+        "style": {
+          "headlineColor": "#000000",
+          "bodyColor": "#333333",
+          "ctaColor": "#0A51F9",
+          "backgroundColor": "#FFFFFF"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#C7C7C7</color>
+    <color name="blue">#241961</color>
+    <color name="primary">#241961</color>
+    <color name="golden">#FFB300</color>
+    <color name="shimmer_placeholder">#C2C2C2</color>
+</resources>
