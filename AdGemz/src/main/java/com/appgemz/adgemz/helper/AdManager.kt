@@ -10,7 +10,7 @@ import com.appgemz.adgemz.models.AdsConfigModel
 import com.appgemz.adgemz.utils.Constants
 import com.appgemz.adgemz.utils.Constants.TEST_DEVICE_HASHED_IDS
 import com.appgemz.adgemz.utils.NetworkConnectivity
-import com.appgemz.adgemz.utils.PreferencesManager
+import com.appgemz.adgemz.utils.AdsPreferences
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
@@ -33,7 +33,7 @@ object AdManager {
      * @return `true` if an ad request can be made, `false` otherwise.
      */
     fun shouldRequestAd(adUnitId: String): Boolean {
-        val lastRequestTime = PreferencesManager.getLong(adUnitId) // Get the last ad request timestamp
+        val lastRequestTime = AdsPreferences.getLong(adUnitId) // Get the last ad request timestamp
         val currentTime = System.currentTimeMillis()               // Get the current system time
         val config = FirebaseRemote.getConfig().globalSettings
         return (currentTime - lastRequestTime) > config.failCappingMs
@@ -47,8 +47,8 @@ object AdManager {
      * @return `true` if the user can click the ad, `false` if the limit is reached.
      */
     fun canClickAd(timeKey: String, countKey: String): Boolean {
-        val lastClickTime = PreferencesManager.getLong(timeKey, 0L)
-        val clickCount = PreferencesManager.getLong(countKey, 0L)
+        val lastClickTime = AdsPreferences.getLong(timeKey, 0L)
+        val clickCount = AdsPreferences.getLong(countKey, 0L)
         val currentTime = System.currentTimeMillis()
 
         val config = FirebaseRemote.getConfig().globalSettings
@@ -56,8 +56,8 @@ object AdManager {
 
         // Check if the interval has passed — reset if yes
         if (currentTime - lastClickTime >= intervalMs) {
-            PreferencesManager.putLong(countKey, 0L)
-            PreferencesManager.putLong(timeKey, currentTime)
+            AdsPreferences.putLong(countKey, 0L)
+            AdsPreferences.putLong(timeKey, currentTime)
             return true
         }
 
@@ -73,9 +73,9 @@ object AdManager {
      * @param countKey Key for storing the total clicks in a day.
      */
     fun registerAdClick(timeKey: String, countKey: String) {
-        val newClickCount = PreferencesManager.getLong(countKey, 0L) + 1
-        PreferencesManager.putLong(countKey, newClickCount)
-        PreferencesManager.putLong(timeKey, System.currentTimeMillis())
+        val newClickCount = AdsPreferences.getLong(countKey, 0L) + 1
+        AdsPreferences.putLong(countKey, newClickCount)
+        AdsPreferences.putLong(timeKey, System.currentTimeMillis())
     }
 
     fun printAdvertisingId(context: Context) {

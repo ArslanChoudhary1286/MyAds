@@ -6,7 +6,7 @@ import com.appgemz.adgemz.helper.AdManager
 import com.appgemz.adgemz.helper.FirebaseRemote
 import com.appgemz.adgemz.utils.CoroutineTimer
 import com.appgemz.adgemz.utils.NetworkConnectivity
-import com.appgemz.adgemz.utils.PreferencesManager
+import com.appgemz.adgemz.utils.AdsPreferences
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
@@ -110,7 +110,7 @@ object NativeAdLoader {
                     isLoading = false
                     onLoadAd(null)
                     if (loadAdError.code == AdRequest.ERROR_CODE_NO_FILL) {
-                        PreferencesManager.putLong(nativeId, System.currentTimeMillis())
+                        AdsPreferences.putLong(nativeId, System.currentTimeMillis())
                     }
                 }
             })

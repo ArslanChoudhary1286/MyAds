@@ -9,7 +9,7 @@ import com.appgemz.adgemz.helper.FirebaseRemote
 import com.appgemz.adgemz.utils.Constants.KEY_CLICK_COUNT
 import com.appgemz.adgemz.utils.Constants.KEY_LAST_CLICK_TIME
 import com.appgemz.adgemz.utils.NetworkConnectivity
-import com.appgemz.adgemz.utils.PreferencesManager
+import com.appgemz.adgemz.utils.AdsPreferences
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
@@ -91,7 +91,7 @@ object InterAdManager {
                     interstitialAd = ad
                     isLoading = false
                     retryCount = 0
-                    PreferencesManager.putLong(adModel.adUnitId, 0L)
+                    AdsPreferences.putLong(adModel.adUnitId, 0L)
                     showLog(TAG, "Interstitial loaded successfully.")
                 }
 
@@ -101,7 +101,7 @@ object InterAdManager {
                     isLoading = false
 
                     if (error.code == AdRequest.ERROR_CODE_NO_FILL) {
-                        PreferencesManager.putLong(adModel.adUnitId, System.currentTimeMillis())
+                        AdsPreferences.putLong(adModel.adUnitId, System.currentTimeMillis())
                         showLog(TAG, "No fill – caching timestamp.")
                     }
 

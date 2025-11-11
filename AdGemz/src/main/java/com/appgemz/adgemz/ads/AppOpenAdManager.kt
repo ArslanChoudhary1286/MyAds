@@ -8,7 +8,7 @@ import com.appgemz.adgemz.helper.AdManager
 import com.appgemz.adgemz.helper.FirebaseRemote
 import com.appgemz.adgemz.utils.CoroutineTimer
 import com.appgemz.adgemz.utils.NetworkConnectivity
-import com.appgemz.adgemz.utils.PreferencesManager
+import com.appgemz.adgemz.utils.AdsPreferences
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
@@ -108,7 +108,7 @@ object AppOpenAdManager {
                     Log.e(TAG, "Ad failed to load: ${error.message}")
                     // Retry again
                     if (error.code == AdRequest.ERROR_CODE_NO_FILL) {
-                        PreferencesManager.putLong(adUnitId, System.currentTimeMillis())
+                        AdsPreferences.putLong(adUnitId, System.currentTimeMillis())
                     }
 
 //                    reloadAd(application)

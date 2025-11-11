@@ -8,7 +8,7 @@ import com.google.gson.reflect.TypeToken
 /**
  * Singleton class to manage shared preferences in the application.
  */
-object PreferencesManager {
+object AdsPreferences {
 
     lateinit var preferences: SharedPreferences
     const val PREF_NAME = "my_local_preference"
